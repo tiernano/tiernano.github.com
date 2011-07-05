@@ -1,0 +1,184 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Import the non-default scaffolding module.
+@import "blueprint/scaffolding";
+
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
+// @include blueprint
+
+@import "mixins/syntax";
+
+// If you are doing a lot of stylesheet concatenation, it is suggested
+// that you scope your blueprint styles, so that you can better control
+// what pages use blueprint when stylesheets are concatenated together.
+body.bp {
+  @include blueprint-typography(true);
+  @include blueprint-utilities;
+  @include blueprint-debug;
+  @include blueprint-interaction;
+  // Remove the scaffolding when you're ready to start doing visual design.
+  // Or leave it in if you're happy with how blueprint looks out-of-the-box
+  background-color: $page-background-color;
+  a {
+    text-decoration: none;
+  }
+}
+
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+.two_col {
+  @include container;
+  #header, #footer {
+    @include column(24, last);
+    background-color: $border-background-color;
+    h1.site-name {
+      padding: 0px;
+      margin: 0px 0px 10px;
+      font-size: 40px;
+      line-height: 40px;
+      font-family: 'Rock Salt', arial, serif;
+      position: relative;
+      a {
+        @include link-colors(#eee, #eee, #eee, #eee, #eee);
+        text-decoration: none;
+      }
+    }
+    p.tag-line {
+      font-size: 14px;
+      color: #bbb;
+      font-style: italic;
+    }
+  }
+  #header {
+    height: 50px;
+    padding: 20px 0 30px 20px;
+    border-bottom: 1px solid black;
+  }
+  #footer {
+    color: #bbb;
+    h4 {
+      color: #eee;
+      font-size: 1.5em;
+      padding-top: 15px;
+      padding-left: 15px;
+      margin-bottom: .5em;
+    }
+    p {
+      padding-left: 15px;
+    }
+    a {
+      @include link-colors(#bbb, $link-color);
+    }
+    #footer-about {
+      @include column(7);
+      @include colborder($border-background-color);
+      ul, li {
+        list-style-type: none;
+      }
+    }
+    #footer-tags {
+      @include column(10);
+      @include colborder($border-background-color);
+    }
+    #footer-archive {
+      @include column(5, true);
+      ul, li {
+        list-style-type: none;
+      }
+    }
+    .tag-cloud {
+      .rank-1 {
+        font-size: 150%;
+      }
+      .rank-2 {
+        font-size: 137%;
+      }
+      .rank-3 {
+        font-size: 125%;
+      }
+      .rank-4 {
+        font-size: 112%;
+      }
+      .rank-5 {
+        font-size: 100%;
+      }
+    }
+  }
+  #content {
+    .post-item {
+      @include column(24, last);
+      background-color: $content-background-color;
+    }
+    .post-info {
+      @include column(6);
+      @include colborder();
+      text-align: right;
+      line-height: 1em;
+      margin-bottom: .25em;
+      h2.title {
+        line-height: 1em;
+        font-family: 'Six Caps', serif;
+        font-size: 48px;
+        padding-left: span(1);
+        padding-bottom: 10px;
+      }
+      .more-info {
+        line-height: 1.5em;
+        font-size: 90%;
+      }
+      a {
+        @include link_colors(#333, $link-color);
+      }
+    }
+    .post-content {
+      @include column(17, true);
+      padding-bottom: .5em;
+      .post-inner-content {
+        margin-right: 1em;
+        #comments {
+          font-size: 90%;
+          a {
+            @include link_colors(#333, $link-color);
+          }
+        }
+      }
+      .social {
+        margin: 10px 0 10px 0;
+        background: #fff;
+        padding: 5px 0 0 5px;
+      }
+    }
+    .pagination {
+      @include column(24, true);
+      background-color: $content-background-color;
+      padding: 10px 0 10px span(7);
+      a {
+        padding-right: 25px;
+      }
+    }
+    .separator {
+      @include colruler();
+    }
+    .highlight {
+      pre {
+        background-color: $border-background-color;
+        overflow: auto;
+        color: #eee;
+        padding: 5px;
+      }
+    }
+    code {
+      font-size: 12px;
+      #font-family: 'Courier New','Terminal',monospace;
+      font-family: 'Bitstream Vera Sans Mono', monospace;
+      line-height: 14px;
+    }
+  }
+}

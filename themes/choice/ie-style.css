@@ -1,0 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+#header{padding-left: 40px; margin-left: 0px;}
+#footer{padding-left: 40px; margin-left: 0px;}
+
+h3.title{text-transform: none; font-size: 47px; font-family: "Yanone Kaffeesatz", Arial, Helvetica, sans-serif;}
+
+.search-form input[type=text]{width: 155px; border: 1px solid #ccc;}
+.search-form input[type=submit]{float: right;}

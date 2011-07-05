@@ -1,18 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>{{ page.title }}</title>
-</head>
+---
+layout: default
+---
+<div class="post-list">
+  <div class="post-item">
+    <div class="post-info">
+      <hr class="separator">
+      <h2 class="title"><a href="{{ page.url }}">{{ page.title }}</a></h2>
+      <p class="more-info">
+        Posted: {{ page.date | date_to_string }}<br />
+        <a href="{{ page.full_url }}#disqus_thread">0</a> Comments
+      </p>
+    </div>
+    <div class="post-content">
+      <hr class="separator">
+      <div class="post-inner-content">
+        {{ content }}
+        <div class="social">
+          <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ page.full_url }}" data-text="{{ page.title }}" data-count="horizontal" data-lang="en">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+          <iframe src="http://www.facebook.com/plugins/like.php?href={{ page.full_url }}&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe> 
+        </div>
+        {% if site.disqus %}
+          <div id="comments">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = '{{ site.disqus.id }}'; // required: replace example with your forum shortname
+            var disqus_title = '{{ page.title }}'
+            var disqus_developer = 1;
 
-<body>
-<h1>{{ page.title }}</h1>
+            // The following are highly recommended additional parameters. Remove the slashes in front to use.
+            // var disqus_identifier = 'unique_dynamic_id_1234';
+            var disqus_url = '{{ page.full_url }}';
 
-{{ content }}
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+             dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={{ site.disqus.id }}">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
 
-<a href="{{ page.url }}#disqus_thread">View Comments</a>
-<div id="disqus_thread"></div>
-<script type="text/javascript" src="http://disqus.com/forums/tiernansgithubpage/embed.js"></script>
-<hr>
-Page built on {{ site.time }}
-</body>
-</html>
+  {% comment %}
+    <ul class="social">
+      <li class="retweet-button">
+      <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ page.full_url }}" data-text="{{ page.title }}" data-count="horizontal" data-lang="en">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+      <iframe src="http://www.facebook.com/plugins/like.php?href={{ page.full_url }}&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe> 
+      </li>
+    </ul>
+  {% endcomment %}
