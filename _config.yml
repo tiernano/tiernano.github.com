@@ -1,0 +1,55 @@
+# standard jekyll configuration
+
+permalink: date
+pygments: true
+exclude: ['Rakefile', 'README.md', 'config.rb']
+markdown: rdiscount
+#paginate: 10
+#destination: /Library/WebServer/Documents/jekyll
+
+# configuration required for some pages
+
+domain: 'localhost'
+title: Super Blog
+author: Joe Smith
+email: user@domain.com
+
+# configuration for ehancements, uncomment to enable
+
+# feedburner:
+#   id: feedburnerid
+
+# google_analytics:
+#   account: UA-XXXXX-X
+
+#github:
+#  username: username
+
+#disqus:
+#  id: username
+
+#twitter:
+#  consumer_key: 'abc123'
+#  consumer_secret: 'abc123'
+#  oauth_token: 'abc123'
+#  oauth_token_secret: 'abc123'
+
+#bitly:
+#  username: 'username'
+#  api_key: 'abc123'
+
+#single_blast:
+#  hostname: 'localhost'
+#  username: 'username'
+#  password: 'abc123'
+#  port: 27012
+#  db_name: 'blogged'
+
+#metaweblog:
+#  domain: 'hostname.com'
+#  endpoint: '/xmlrpc.php'
+#  username: 'username'
+#  password: 'abc123'
+#  blog_id: 'blog'
+
+#tag_dir: tag
