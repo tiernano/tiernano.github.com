@@ -8,7 +8,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 body {
 	margin: 0;
 	padding: 0;
-	background: #010000 url(images/img01.jpg) repeat left top;
+	background: #010000;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	color: #3C3D3F;
@@ -85,7 +85,6 @@ a:hover {
 	margin-left: 30px;
 	padding: 20px 0px 0px 0px;
 	letter-spacing: -1px;
-	text-transform: uppercase;
 	font-size: x-large;
 	color: #FF3000;
 }
