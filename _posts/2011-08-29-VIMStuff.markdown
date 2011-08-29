@@ -1,0 +1,9 @@
+---
+
+layout: post
+
+title: VIM Stuff
+---
+
+VIM is one of those text editors that always scared me... It still does, but at least this [writeup](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/) kind of explains it a lot more... 
+Im used to Notepad, [NotePad++](http://notepad-plus-plus.org/), [EditPad Pro](http://www.editpadpro.com/) and Visual Studio. But, being a geek, i want to learn more... So, im trying out VIM (unsuccessfully currently) and Emacs, just to try them out... 
